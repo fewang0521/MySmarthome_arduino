@@ -27,7 +27,7 @@ void setup()
  
    //Timer1.initialize(2000000);             // setting callback is 2s
    //Timer1.attachInterrupt(Callback); 
-   Serial.println("hi i'm port 5 geen arduino");
+   //Serial.println("hi i'm port 5 geen arduino");
 }
  
 void loop()
@@ -53,9 +53,8 @@ void loop()
     }while (Serial.available() > 0);
     //Serial.println("Send ----- ");
    //second, send the message by Zigbee
-    if (mySerial.println(someChar)){
+    mySerial.write(someChar);
     //Serial.write(someChar);
-    }
     }
 }
 

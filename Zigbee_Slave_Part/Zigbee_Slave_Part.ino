@@ -98,21 +98,23 @@ void loop()
         }        
         else if (strncmp(someChar,"S",1)==0){
             servo.attach(servoPin);
-            for(angle = 90; angle < 120; angle++) 
+            for(angle = 50; angle < 100; angle++) 
               { 
                 servo.write(angle); 
                 delay(15); 
               } 
+          servo.detach();
           mySerial.write("on");
           mySerial.write("|");
         } 
         else if (strncmp(someChar,"s",1)==0){
             servo.attach(servoPin);
-            for(angle = 90; angle > 60; angle--) 
+            for(angle = 100; angle > 50; angle--) 
               { 
                 servo.write(angle); 
                 delay(15); 
               } 
+          servo.detach(); 
           mySerial.write("off");
           mySerial.write("|");
         }  
@@ -141,5 +143,6 @@ void loop()
  
   //while(mySerial.available()) 
      //Serial.print((char)mySerial.read());   
+
 
 
